@@ -3,25 +3,27 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-
-
-
 function App() {
 
-  const [counter, setCounter] = useState(15)
+  const [counter, setCounter] = useState(0)
 
 //  let counter = 15
 
- const addValue = ()=>{
-  console.log("value added", Math.random())
-  // counter = counter+1
-  setCounter(counter +1)
- }
- const subValue = ()=>{
-  console.log("value Subtracted", Math.random())
-  // counter = counter+1
-  setCounter(counter - 1)
- }
+const addValue = () => {
+  if (counter < 20) {
+    setCounter(counter + 1);
+  } else {
+    console.log("Counter cannot exceed 20");
+  }
+};
+
+const subValue = () => {
+  if (counter > 0) {
+    setCounter(counter - 1);
+  } else {
+    console.log('Counter cannot be negative');
+  }
+};
    return (
     <>
       <h1> Counter Using hooks</h1>
@@ -31,7 +33,6 @@ function App() {
       onClick={addValue}
       >Add value</button>
       <br/>
-
       <button onClick= {subValue}>Dec value</button>
     </>
   )
