@@ -17,6 +17,11 @@ function App() {
   // counter = counter+1
   setCounter(counter +1)
  }
+ const subValue = ()=>{
+  console.log("value Subtracted", Math.random())
+  // counter = counter+1
+  setCounter(counter - 1)
+ }
    return (
     <>
       <h1> Counter Using hooks</h1>
@@ -26,7 +31,8 @@ function App() {
       onClick={addValue}
       >Add value</button>
       <br/>
-      <button>Decrease value</button>
+
+      <button onClick= {subValue}>Dec value</button>
     </>
   )
 }
