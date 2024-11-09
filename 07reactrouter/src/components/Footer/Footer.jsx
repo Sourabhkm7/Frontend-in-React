@@ -76,7 +76,7 @@ export default function Footer() {
                     <span className="text-sm text-gray-500 sm:text-center">
                         ©
                         <a href="https://www.linkedin.com/in/sourabhkm7/" className="hover:underline">
-                        Sourabh Kumar 2023-2024
+                        Sourabh Kumar 2024
                         </a>
                         . All Rights Reserved.
                     </span>

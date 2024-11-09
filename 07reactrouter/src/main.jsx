@@ -7,6 +7,7 @@ import Home from './components/Home/Home'
 import About from './components/About/About'
 import Contact from './components/Contact/contact'
 import User from './components/User/User'
+import GitHub from './components/GitHub/GitHub'
 
 const router = createBrowserRouter([
   {
@@ -28,10 +29,16 @@ const router = createBrowserRouter([
       {
         path:'user/:userid',
         element: <User/>
+      },
+      {
+        loader: {},
+        path:'github',
+        element: <GitHub/>
       }
     ]
   }
 ])
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
