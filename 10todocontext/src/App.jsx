@@ -7,7 +7,7 @@ const adddTodo =(todo)=>{
 }
 
 const updateTodo = (id,todo) =>{
-  setTodos((prev)=>prev.map(prevTodo ))
+  setTodos((prev)=>prev.map((prevTodo)=>(prevTodo.id)===id ?todo : prevTodo))
 }
 
 function App() {
