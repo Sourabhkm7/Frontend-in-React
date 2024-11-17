@@ -1,25 +1,37 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import {removeTodo} from '../features/todo/todoSlice'
+import { removeTodo } from '../features/todo/todoSlice'
 
+// Functional component to display a list of todos
 function Todos() {
-    const todos = useSelector(state => state.todos)
-    const dispatch = useDispatch()
+  // Fetch todos from the Redux store using useSelector
+  const todos = useSelector(state => state.todos)
+  
+  // Create a dispatch function using useDispatch to dispatch actions
+  const dispatch = useDispatch()
 
   return (
     <>
-    <div>Todos</div>
-    <ul className="list-none">
+      {/* Header for the todos section */}
+      <div>Todos</div>
+
+      {/* List of todos */}
+      <ul className="list-none">
+        {/* Iterate over the todos array to create a list item for each todo */}
         {todos.map((todo) => (
           <li
             className="mt-4 flex justify-between items-center bg-zinc-800 px-4 py-2 rounded"
-            key={todo.id}
+            key={todo.id} // Unique key for React to track list items
           >
-            <div className='text-white'>{todo.text}</div>
+            {/* Display the todo text */}
+            <div className="text-white">{todo.text}</div>
+
+            {/* Button to delete the todo */}
             <button
-             onClick={() => dispatch(removeTodo(todo.id))}
+              onClick={() => dispatch(removeTodo(todo.id))} // Dispatch removeTodo action with the todo id
               className="text-white bg-red-500 border-0 py-1 px-4 focus:outline-none hover:bg-red-600 rounded text-md"
             >
+              {/* Trash icon (SVG) */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
